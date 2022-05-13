@@ -146,6 +146,7 @@ public class Main {
                 if (item.SKU == itemNum) {
                     // create the date modified and format it to DD/MM/YYY
                     LocalDate rawDate = LocalDate.now();
+
                     // PLEASE CHANGE IT BACK AGAIN TO dd/MM/yyyy - this is only for demonstration
                     DateTimeFormatter formatPattern = DateTimeFormatter.ofPattern("yyyy/MM/dd");
                     String modifiedDate = formatPattern.format(rawDate); // store this for the date created and date modified
@@ -191,13 +192,13 @@ public class Main {
         int viewOpt = input.nextInt();
         //conditional statement
         switch (viewOpt) {
-            case 1 -> ascendingView(inventory);
-            case 2 -> descendingView(inventory);
-            case 3 -> showAllItems(inventory);
-            case 4 -> exitApplication();
-            default -> {
+            case 1 : ascendingView(inventory); break;
+            case 2 : descendingView(inventory); break;
+            case 3 : showAllItems(inventory); break;
+            case 4 : exitApplication(); break;
+            default : {
                 System.out.println("ERROR: Please enter a valid input.");
-                retrieveItemsOptions(inventory);
+                retrieveItemsOptions(inventory); break;
             }
         }
     }
@@ -357,20 +358,20 @@ public class Main {
         System.out.println("5. Go back to the homepage.");
         System.out.println("6. Exit Application");
 
-        System.out.println("\nWhat would you like to do?<1-5>: ");
+        System.out.println("\nWhat would you like to do?<1-6>: ");
         int reOption = input.nextInt();
 
         switch (reOption) {
-            case 1 -> addItemPage(inventory);
-            case 2 -> updateItem(inventory);
-            case 3 -> deleteItem(inventory);
-            case 4 -> retrieveItemsOptions(inventory);
-            case 5 -> homepage(inventory);
-            case 6 -> exitApplication();
-            default -> {
+            case 1 : addItemPage(inventory);
+            case 2 : updateItem(inventory);
+            case 3 : deleteItem(inventory);
+            case 4 : retrieveItemsOptions(inventory);
+            case 5 : homepage(inventory);
+            case 6 : exitApplication();
+            default : {
                 System.out.println("ERROR: Please enter a valid input.");
                 // go back to the retrieve item page
-                reOption2(inventory);
+                reOption2(inventory); break;
             }
         }
     }
@@ -385,13 +386,13 @@ public class Main {
         int option = input.nextInt();
 
         switch (option) {
-            case 1 -> addItemPage(inventory);
-            case 2 -> retrieveItemsOptions(inventory);
-            case 3 -> homepage(inventory);
-            case 4 -> exitApplication();
-            default -> {
+            case 1 : addItemPage(inventory); break;
+            case 2 : retrieveItemsOptions(inventory);break;
+            case 3 : homepage(inventory);break;
+            case 4 : exitApplication();break;
+            default : {
                 System.out.println("ERROR: Please enter a valid input. ");
-                reOption(inventory);
+                reOption(inventory);break;
             }
         }
     }
