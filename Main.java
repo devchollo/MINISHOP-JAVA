@@ -18,11 +18,10 @@ public class Main {
     public static void homepage(ArrayList<Inventory> inventory){
         // Show menu
         System.out.println("1. Add Item \t\t\t\t\t 2. Retrieve Items");
-        System.out.println("3. Update Item \t\t\t\t\t 4. Delete Item");
-        System.out.println("5. Exit Application");
+        System.out.println("3. Exit Application");
 
         // option input field
-        System.out.println("\nWhat would like to do?<1-5>: ");
+        System.out.println("\nWhat would like to do?<1-3>: ");
         Scanner in = new Scanner(System.in);
         int homeOpt = in.nextInt();
         // conditional statement for the Menu -- USER OPTED IN
@@ -33,12 +32,6 @@ public class Main {
            // retrieve items options
             retrieveItemsOptions(inventory);
         }else if(homeOpt == 3) {
-            // update item
-            updateItem(inventory);
-        }else if(homeOpt == 4) {
-            // delete item
-            deleteItem(inventory);
-        }else if(homeOpt == 5) {
             exitApplication();
         } else {
             System.out.println("\nOops! I think you have entered an invalid input. Please try again. \n");
